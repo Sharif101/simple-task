@@ -2,6 +2,9 @@ import React, { useState } from "react";
 import DragAndDrop from "../DragAndDrop/DragAndDrop";
 import DragImage from "../DragImage/DragImage";
 import NastedComment from "../NastedComment/NastedComment";
+import NestedAccordion from "../NestedAccordion/NestedAccordion";
+import FormBuilder from "../FormBuilder/FormBuilder";
+import ToDoList from "../ToDoList/ToDoList";
 
 const Home = () => {
   const [activeComponent, setActiveComponent] = useState("");
@@ -47,6 +50,39 @@ const Home = () => {
           >
             Nested Comment
           </button>
+
+          <button
+            className={`px-6 py-3 rounded-lg text-sm font-medium transition border ${
+              activeComponent === "accordian"
+                ? "bg-gray-800 text-white border-gray-300"
+                : "bg-white text-gray-800 border-gray-300 hover:bg-gray-100"
+            }`}
+            onClick={() => setActiveComponent("accordian")}
+          >
+            Nested Accordion
+          </button>
+
+          <button
+            className={`px-6 py-3 rounded-lg text-sm font-medium transition border ${
+              activeComponent === "form"
+                ? "bg-gray-800 text-white border-gray-300"
+                : "bg-white text-gray-800 border-gray-300 hover:bg-gray-100"
+            }`}
+            onClick={() => setActiveComponent("form")}
+          >
+            From Builder
+          </button>
+
+          <button
+            className={`px-6 py-3 rounded-lg text-sm font-medium transition border ${
+              activeComponent === "todo"
+                ? "bg-gray-800 text-white border-gray-300"
+                : "bg-white text-gray-800 border-gray-300 hover:bg-gray-100"
+            }`}
+            onClick={() => setActiveComponent("todo")}
+          >
+            Todo
+          </button>
         </div>
       </div>
 
@@ -59,6 +95,9 @@ const Home = () => {
         {activeComponent === "drag" && <DragAndDrop />}
         {activeComponent === "image" && <DragImage />}
         {activeComponent === "comment" && <NastedComment />}
+        {activeComponent === "accordian" && <NestedAccordion />}
+        {activeComponent === "form" && <FormBuilder />}
+        {activeComponent === "todo" && <ToDoList />}
       </div>
     </div>
   );
