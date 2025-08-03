@@ -43,7 +43,7 @@ export default function DragAndDrop() {
       {Object.entries(columns).map(([columnName, tasks]) => (
         <div
           key={columnName}
-          className="bg-white rounded-lg shadow w-1/3 p-4 min-h-[300px]"
+          className="bg-white rounded-lg shadow w-1/3 p-4 min-h-[300px] border border-gray-300"
           onDragOver={allowDrop}
           onDrop={() => handleDrop(columnName)}
         >
@@ -53,7 +53,7 @@ export default function DragAndDrop() {
           {tasks.map((task) => (
             <div
               key={task.id}
-              className="bg-blue-100 hover:bg-blue-200 transition rounded p-3 mb-3 cursor-grab"
+              className="bg-blue-100 hover:bg-blue-200 transition rounded p-3 mb-3 cursor-grab border border-gray-300"
               draggable
               onDragStart={() => handleDragStart(task, columnName)}
             >
